@@ -30,7 +30,7 @@ function main() {
 
     fetch(`https://api.github.com/users/${input}`).then((response) => {
         response.json().then(data => {
-            if (data.message === 'Not Found') {
+            if (data.message === 'Not Found' || data.message === 'undefined') {
                 document.querySelector('#message2').style.display = "none";
                 document.querySelector('#message3').style.display = "block";
             } else {
