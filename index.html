@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Users</title>
-    <!-- css -->
+    <!-- Css -->
     <link rel="stylesheet" href="assets/css/index.css">
     <!-- Bootstrap5 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,35 +18,43 @@
     <!-- Barra de navegação -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid"><img class="" src="assets/img/cat4.png" alt=""
-                    style="width: 3vw; margin-right: .8%;">
+            <div class="container-fluid">
+                <!-- Imagem do gato -->
+                <img class="d-inline-block mx-2" src="assets/img/cat4.png" alt="" width="30" height="24">
+                <!-- Nome do App -->
                 <a class="navbar-brand" href="#">CatUser</a>
+                <!-- Aquele botão de expandir quando visto em Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- O conteúdo quando expande o botão em mobile -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" id="link-home" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">User</a>
+                            <a class="nav-link" id="link-user" href="#">User</a>
                         </li>
                     </ul>
+                    <!-- Campo de pesquisa -->
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value=""
+                        <input class="form-control me-2" type="search" placeholder="Busque um usuário" aria-label="Search" value=""
                             id="abcd">
-                        <button class="btn btn-outline-success" type="submit" onclick="main();">Search</button>
+                        <button class="btn btn-outline-success" type="submit" onclick="main();">Confirmar</button>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- Aqueles links de navegação embaixo da barra-->
     <section>
         <div class="container-fluid px-0 py-2 d-flex">
-            <!-- links de páginas acessíveis -->
+            <!-- Links de páginas acessíveis -->
             <nav class="w-75 px-5 py-2"
                 style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
                 aria-label="breadcrumb">
@@ -54,27 +62,103 @@
                     <li class="breadcrumb-item"><a class="text-light" href="#">Home</a></li>
                     <li class="breadcrumb-item"><a class="text-light" href="#">List Users</a></li>
                 </ol>
-                <!-- img cat -->
             </nav>
-            <div class="container w-25 vh-25 d-flex justify-content-center p-0">
-                <!-- <img class="position-absolute" src="assets/img/cat3.png" alt="" style="width: 10%;"> -->
-            </div>
+
         </div>
     </section>
-    <section class="row">
-        <div class="container-fluid p-0 m-0">
+
+    <!-- Aqui fica a estrutura base dos cards -->
+    <section class="row m-0 w-100">
+
+        <!-- Esse é o container que abriga os cards -->
+        <div class="container-fluid p-0 m-0 min-vh-100">
+
+            <!--Essa é a linha onde os cards são adicionados da esquerda para a direita -->
             <div class="row w-100 p-0 m-0">
-                <!-- Card com os dados do user -->
+                <!-- Aqui ficam as mensagens de acordo com as pesquisas encontradas ou não -->
                 <div class="col py-3 row row-cols-1 gap-2 justify-content-start" style="padding-left: 10%;" id="coluna">
-                    <h1 class="text-light" id="message1" style="display: block;">Pesquise um usuário</h1>
-                    <h1 class="text-light" id="message2" style="display: none;">Usuário Encontrado!</h1>
-                    <h1 class="text-light" id="message3" style="display: none;">Usuário não foi Encontrado!</h1>
+                    <h1 class="text-light fs-3" id="message1" style="display: block;">Pesquise um usuário</h1>
+                    <h1 class="text-light fs-3" id="message2" style="display: none;">Usuário Encontrado!</h1>
+                    <h1 class="text-light fs-3" id="message3" style="display: none;">Usuário não foi Encontrado!</h1>
                 </div>
                 <div class="col-sm-2 container-fluid"></div>
             </div>
         </div>
     </section>
+    <!-- Rodapé -->
+    <footer class="container-fluid bg-light">
+        <div class="container-fluid bg-light p-4 d-flex justify-content-center">
+            <h1 class="text-align-center">Developers</h1>
+        </div>
+        <div class="row d-flex gap-3 justify-content-center">
+            <!-- Bio GitHub Ana -->
+            <div class="card mb-3" style="max-width: 540px;">
+
+                <div class="row g-0">
+
+                    <div class="col-md-4">
+                        <img id="img-ana" src="" class="img-fluid rounded-start" alt="">
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 id="user-ana" class="card-title"></h5>
+                            <p id="bio-ana" class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Bio GitHub Rafa -->
+            <div class="card mb-3" style="max-width: 540px;">
+
+                <div class="row g-0">
+
+                    <div class="col-md-4">
+                        <img id="img-rafa" src="" class="img-fluid rounded-start" alt="">
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 id="user-rafa" class="card-title"></h5>
+                            <p id="bio-rafa" class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Bio Rom GitHub Rafa -->
+            <div class="card mb-3" style="max-width: 540px;">
+
+                <div class="row g-0">
+
+                    <div class="col-md-4">
+                        <img id="img-rom" src="" class="img-fluid rounded-start" alt="">
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 id="user-rom" class="card-title"></h5>
+                            <p id="bio-rom" class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div> 
+        </div>
+        <div class="container-fluid d-flex justify-content-center align-items-center p-2">
+            Copyright 2021. Todos os direitos reservados.
+        </div>
+    </footer>
 </body>
+
+<!-- Javacstipt -->
 <script src="assets/js/index.js"></script>
 
 <!-- Bootstrap5 JS -->
