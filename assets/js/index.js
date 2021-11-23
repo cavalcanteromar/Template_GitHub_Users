@@ -62,21 +62,36 @@ function addPerfilCard() {
         response.json().then(data => {
             document.getElementById('img-ana').src = data.avatar_url;
             document.getElementById('user-ana').innerText = data.name;
-            document.getElementById('bio-ana').innerText = data.bio;
+            var bio = document.getElementById('bio-ana');
+            if(!data.bio){
+                bio.innerText = "Sem Biografia";
+            }else if (data.bio) {
+                bio.innerText = data.bio;
+            }
         })
     });
     fetch(`https://api.github.com/users/Raafaelrc`).then((response) => {
         response.json().then(data => {
             document.getElementById('img-rafa').src = data.avatar_url;
             document.getElementById('user-rafa').innerText = data.name;
-            document.getElementById('bio-rafa').innerText = data.bio;
+            var bio = document.getElementById('bio-rafa');
+            if(!data.bio){
+                bio.innerText = "Sem Biografia";
+            }else if (data.bio) {
+                bio.innerText = data.bio;
+            }
         })
     });
     fetch(`https://api.github.com/users/cavalcanteromar`).then((response) => {
         response.json().then(data => {
             document.getElementById('img-rom').src = data.avatar_url;
             document.getElementById('user-rom').innerText = data.name;
-            document.getElementById('bio-rom').innerText = data.bio;
+            var bio = document.getElementById('bio-rom');
+            if(!data.bio){
+                bio.innerText = "Sem Biografia";
+            }else if (data.bio) {
+                bio.innerText = data.bio;
+            }
         })
     });
 }
