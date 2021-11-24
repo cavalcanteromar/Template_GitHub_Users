@@ -1,9 +1,32 @@
-.box-shadow {
-  -webkit-box-shadow: 1px 1px 4px lightgrey;
-          box-shadow: 1px 1px 4px lightgrey;
+#abcd::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.spinner {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  height: 100vh;
+}
+
+.smaecer {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s linear cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: opacity 0.2s linear cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.smaecer.hide {
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
 }
 
 .w-card {
-  width: 13rem !important;
+  width: 18rem !important;
 }
 /*# sourceMappingURL=index.css.map */

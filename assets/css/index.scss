@@ -1,0 +1,25 @@
+#abcd::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.spinner {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    height: 100vh;
+}
+
+.smaecer {
+    opacity: 1;
+    transition: opacity .2s linear cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.smaecer.hide {
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.w-card {
+    width: 18rem !important;
+}
