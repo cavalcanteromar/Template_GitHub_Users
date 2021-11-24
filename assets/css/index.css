@@ -29,4 +29,55 @@
 .w-card {
   width: 18rem !important;
 }
+
+#cat:hover {
+  -webkit-animation: catmove 1.2s linear infinite both;
+          animation: catmove 1.2s linear infinite both;
+}
+
+@-webkit-keyframes catmove {
+  0% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translateX(10%) rotate(10deg);
+            transform: translateX(10%) rotate(10deg);
+  }
+  50% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+  75% {
+    -webkit-transform: translateX(-10%) rotate(-10deg);
+            transform: translateX(-10%) rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+}
+
+@keyframes catmove {
+  0% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translateX(10%) rotate(10deg);
+            transform: translateX(10%) rotate(10deg);
+  }
+  50% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+  75% {
+    -webkit-transform: translateX(-10%) rotate(-10deg);
+            transform: translateX(-10%) rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+}
 /*# sourceMappingURL=index.css.map */

@@ -20,9 +20,14 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 2;">
             <div class="container-fluid">
                 <!-- Imagem do gato -->
-                <img class="d-inline-block mx-2" src="assets/img/cat4.png" alt="" width="30" height="24">
+                <div class="container-fluid d-flex justify-content-center align-items-center py-2 h-100" style="width: 50px !important; height: 100%;">
+                    <img class=" mx-2" src="assets/img/cat4.png" alt="" width="30" height="24" id="cat">
+                </div>
+                <audio id="somcat"  >
+                    <source src="/assets/audio/cat.mp3" type="audio/mp3">
+                </audio>
                 <!-- Nome do App -->
-                <a class="navbar-brand" href="#">CatUser</a>
+                <a class="navbar-brand d-flex align-items-center" href="." style="width: 65% !important;">CatUser</a>
                 <!-- Aquele botão de expandir quando visto em Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

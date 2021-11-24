@@ -180,3 +180,14 @@ function addPerfilCard() {
 }
 
 addPerfilCard();
+
+//audio cat
+
+
+var cat = document.getElementById("cat");
+var audio = document.getElementById("somcat");
+
+cat.addEventListener('click', () => {
+    audio.play();
+})
+

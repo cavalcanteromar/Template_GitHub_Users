@@ -23,3 +23,16 @@
 .w-card {
     width: 18rem !important;
 }
+
+#cat:hover {
+    animation: catmove 1.2s linear infinite both;
+}
+
+@keyframes catmove {
+    0% {transform: translateX(0%) rotate(0deg);}   
+    25% {transform: translateX(10%) rotate(10deg);}   
+    50% {transform: translateX(0%) rotate(0deg);}   
+    75% {transform: translateX(-10%) rotate(-10deg);}   
+    100% {transform: translateX(0%) rotate(0deg);}   
+       
+}
