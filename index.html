@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Users</title>
-    <!-- Css -->
     <link rel="stylesheet" href="assets/css/index.css">
-    <!-- Bootstrap5 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-
 <body class="bg-dark">
-
-    <!-- Barra de navegação -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 2;">
             <div class="container-fluid">
-                <!-- Imagem do gato -->
-                <div class="container-fluid d-flex justify-content-center align-items-center py-2 h-100" style="width: 50px !important; height: 100%;">
-                    <img class=" mx-2" src="assets/img/cat4.png" alt="" width="30" height="24" id="cat">
+                <div class="container-fluid d-flex justify-content-center align-items-center py-2 h-100"
+                    style="width: 50px !important; height: 100%;">
+                    <img class=" mx-2" src="assets/img/cat.png" alt="" width="30" height="24" id="cat">
                 </div>
-                <audio id="somcat"  >
-                    <source src="/assets/audio/cat.mp3" type="audio/mp3">
-                </audio>
-                <!-- Nome do App -->
-                <a class="navbar-brand d-flex align-items-center" href="." style="width: 65% !important;">CatUser</a>
-                <!-- Aquele botão de expandir quando visto em Mobile -->
+                <a class="navbar-brand " href=".">CatUser</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- O conteúdo quando expande o botão em mobile -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" id="link-home" aria-current="page" href="#">Home</a>
@@ -45,48 +32,17 @@
                             <a class="nav-link" id="link-user" href="#">User</a>
                         </li>
                     </ul>
-                    <div class="collapse navbar-collapse float-right" id="navbarNavDarkDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Campo de pesquisa -->
                     <div class="d-flex">
-                        <!-- <input class="form-control me-2" placeholder="Busque um usuário" aria-label="Search" value=""
-                            list="historico" id="abcd" list="" name="option" autocomplete="off"> -->
-
                         <input class="form-control me-2" type="search" list="datalistOptions" id="abcd"
                             placeholder="Busque um usuário" aria-label="Search" autocomplete="off">
-                        <datalist id="abcd">
-                            <option value="San Francisco">
-                            <option value="New York">
-                            <option value="Seattle">
-                            <option value="Los Angeles">
-                            <option value="Chicago">
-                        </datalist>
-
                         <button class="btn btn-outline-success" type="submit" id="btn-confirmar">Confirmar</button>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-
-    <!-- Aqueles links de navegação embaixo da barra-->
     <section>
         <div class="container-fluid px-0 py-2 d-flex" style="z-index: 2;">
-            <!-- Links de páginas acessíveis -->
             <nav class="w-75 px-5 py-2"
                 style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
                 aria-label="breadcrumb">
@@ -95,43 +51,29 @@
                     <li class="breadcrumb-item"><a class="text-light" href="#">List Users</a></li>
                 </ol>
             </nav>
-
         </div>
     </section>
-
-    <!-- Aqui fica a estrutura base dos cards -->
     <section class="row m-0 w-100">
-        <!-- Esse é o container que abriga os cards -->
-        <div class="container-fluid p-0 m-0 min-vh-100">
-            <!--Essa é a linha onde os cards são adicionados da esquerda para a direita -->
-            <div class="row w-100 p-0 m-0">
-
+        <div class="col p-0 m-0 min-vh-100">
+            <div class="row p-0 m-0">
                 <div class="container-fluid position-absolute top-0 left-0 spinner smaecer bg-dark" id="spinner">
                     <div class="spinner-border text-primary bg-dark" role="status" style="width: 100px; height: 100px;">
                     </div>
                 </div>
-
-
-                <!-- Aqui ficam as mensagens de acordo com as pesquisas encontradas ou não -->
-                <div class="col py-3 row row-cols-1 gap-2 justify-content-start" style="padding-left: 10%;" id="coluna">
-                    <h1 class="text-light fs-3" id="message1" style="display: block;">Pesquise um usuário</h1>
+                <div class="row m-0 px-5 py-3 gap-2 justify-content-start" id="coluna">
+                    <h1 class="text-light fs-3" id="message1" style="display: block;">Pesquise por um usuário do Github</h1>                    
                     <h1 class="text-light fs-3" id="message2" style="display: none;">Usuário Encontrado!</h1>
                     <h1 class="text-light fs-3" id="message3" style="display: none;">Usuário não foi Encontrado!</h1>
-
                 </div>
             </div>
         </div>
-
         </div>
     </section>
-
-    <!-- Rodapé -->
     <footer class="container-fluid bg-light">
         <div class="container-fluid bg-light p-4 d-flex justify-content-center">
             <h1 class="text-align-center">Developers</h1>
         </div>
         <div class="row d-flex gap-3 justify-content-center">
-            <!-- Bio GitHub Ana -->
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -145,7 +87,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Bio GitHub Rafa -->
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -159,7 +100,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Bio Rom GitHub Rafa -->
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -178,15 +118,9 @@
             Copyright 2021. Todos os direitos reservados.
         </div>
     </footer>
-
 </body>
-
-<!-- Javacstipt -->
 <script src="assets/js/index.js"></script>
-
-<!-- Bootstrap5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-
 </html>

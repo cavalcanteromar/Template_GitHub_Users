@@ -1,74 +1,17 @@
-//- Retorna as sugestões conforme for digitando -----------------------------------------------------------
-
-// const onkeyUp = (event) => { 
-//     var input = document.getElementById('abcd').value;
-//     const minimumChars = 3;
-
-//     let array = [
-//         "Romario",
-//         "Rafael",
-//         "Ana",
-//         "Joaquim",
-//         "João",
-//         "antônio",
-//         "Maria",
-//         "Adalberto",
-//         "Marcilane",
-//     ]
-
-//     if(event.target.value.length >= minimumChars) {
-//         console.log(array);
-//     }
-
-
-
-
-//     fetch(`https://api.github.com/users/${input}`).then((response) => {
-//         response.json().then(data => {
-
-
-//             Object.keys(data).forEach(function (name) {
-//                 const nomes = data[name].login;
-//                 console.table(nomes);
-//                 for (i in nomes) {
-//                     console.log(nomes[i])
-
-//                     if (nomes[i] == input.value) {
-//                         console.table('id: ', nomes);
-//                     }
-//                 }
-//             });
-
-//         });
-//     });
-// };
-
-// document.getElementById('abcd').addEventListener('keyup', onkeyUp);
-
-
-//-----------------------------------------------------------------------
-
-
-
-
 var button = document.getElementById('btn-confirmar');
 
 button.addEventListener('click', function click() {
-
-    // valor do campo de pesquisa
     var input = document.getElementById('abcd').value;
-
-    // spinner ---
     let div = document.querySelector('.smaecer').style.display = "flex";
 
-    //temporizador do spinner
     setTimeout(function () {
         document.querySelector('.smaecer').style.display = "none";
     }, 600);
 
-    //------------
+    document.querySelector("#link-home").classList.remove("active");
+    document.querySelector("#link-user").classList.add("active");    
+    
 
-    // criando os elementos HTML
     var linha = document.createElement('div');
     var div2 = document.createElement('div');
     var h2 = document.createElement('h2');
@@ -76,7 +19,6 @@ button.addEventListener('click', function click() {
     var img = document.createElement('img');
     var a = document.createElement('a');
 
-    //adicionando as classes aos elementos criados
     linha.className = "card box-shadow w-card p-0 m-0";
     div2.className = "card-body";
     p.className = "card-text";
@@ -84,27 +26,20 @@ button.addEventListener('click', function click() {
     img.className = "card-img-top";
     a.className = "btn btn-primary w-100"
 
-    //inserindo os elementos em seus respectivos
     div2.appendChild(h2);
     div2.appendChild(p);
     div2.appendChild(a);
     linha.appendChild(img);
     linha.appendChild(div2);
 
-    //inserindo valor no button 
     a.innerHTML = "Ver perfil";
-
-    //pegando o id da area onde os cards serão inseridos
     let card = document.getElementById("coluna");
 
 
-    //consultando a api do github
     fetch(`https://api.github.com/users/${input}`).then((response) => {
 
-        //retornando com os dados e atribuindo a variavel data
         response.json().then(data => {
 
-            //condicional caso não encontre o usuário
             if (data.message === 'Not Found' || data.message === 'undefined') {
                 document.querySelector('#message1').style.display = "none";
                 document.querySelector('#message2').style.display = "none";
@@ -114,10 +49,8 @@ button.addEventListener('click', function click() {
                 document.getElementById("link-user").classList.remove("active");
             }
 
-            //condicional caso encontre o usuário 
             else {
 
-                //verificando se o usuário já foi inserido para não repetir
                 if (data.name != document.getElementById('h2-name')) {
                     card.appendChild(linha);
                     h2.innerText = data.name;
@@ -137,8 +70,6 @@ button.addEventListener('click', function click() {
     });
 });
 
-
-//-----------------------------------------------------------------------
 
 function addPerfilCard() {
     fetch(`https://api.github.com/users/AnaCarolinaM`).then((response) => {
@@ -180,14 +111,4 @@ function addPerfilCard() {
 }
 
 addPerfilCard();
-
-//audio cat
-
-
-var cat = document.getElementById("cat");
-var audio = document.getElementById("somcat");
-
-cat.addEventListener('click', () => {
-    audio.play();
-})
 
